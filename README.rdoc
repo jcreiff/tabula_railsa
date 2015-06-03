@@ -1,28 +1,4 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Rather than an if statement in the home view, I would make a separate view (for
+example, home/results, as a post), then point the form_tag to home_results_path.
+This way, the "if[params]" logic can be lifted out of the form.html.erb file and
+be placed in a results.html.erb file.
