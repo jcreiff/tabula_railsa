@@ -2,3 +2,15 @@ Rather than an if statement in the home view, I would make a separate view (for
 example, home/results, as a post), then point the form_tag to home_results_path.
 This way, the "if[params]" logic can be lifted out of the form.html.erb file and
 be placed in a results.html.erb file.
+
+_________________________________
+
+
+The best approach for storing environment variables like API keys is to keep them
+in .profile as a key/value pair.  This way when you write code that accesses an API
+and requires you to provide a password as a parameter, you can write ENV["PASSWORD"]
+instead of your actual key.  When you push to GitHub, your API won't be visible and
+therefore less easily compromised.
+
+Rails runs migrations for your test database automatically when you rake, so fixtures
+appear in test environment (whether you like it or not).
