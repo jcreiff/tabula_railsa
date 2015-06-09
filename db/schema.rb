@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20150609130744) do
   create_table "surveys", force: :cascade do |t|
     t.string   "name"
     t.boolean  "chocolate"
-    t.boolean  "rainbow"
-    t.boolean  "puppy"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "rainbows"
+    t.boolean  "puppies"
+    t.boolean  "cold_hard_cash"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
 end

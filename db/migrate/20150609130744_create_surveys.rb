@@ -3,8 +3,9 @@ class CreateSurveys < ActiveRecord::Migration
     create_table :surveys do |t|
       t.string :name
       t.boolean :chocolate
-      t.boolean :rainbow
-      t.boolean :puppy
+      t.boolean :rainbows
+      t.boolean :puppies
+      t.boolean :cold_hard_cash
 
       t.timestamps null: false
     end
