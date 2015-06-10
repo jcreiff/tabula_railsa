@@ -1,15 +1,27 @@
-  <%= form_for :survey do |f| %>
+<% if params[:name] %>
+  Thanks for submitting the form!  Here are your answers:<br>
+  Name: <%= @survey.name %><br>
+  Chocolate? <%= @survey.chocolate ? "Yes!" : "No" %><br>
+  Rainbows? <%= @survey.rainbows ? "Yes!" : "No" %><br>
+  Puppies? <%= @survey.puppies ? "Yes!" : "No" %><br>
+  <% if Rails.env == "development" %>
+    Cold Hard Cash? <%= @survey.cold_hard_cash ? "Yes!" : "No" %><br>
+  <% end %>
+
+<% else %>
+  <%= form_tag home_form_path do %>
     <div>
-      Name: <%= f.text_field :name %>
+      Name: <%= text_field_tag :name %>
     </div>
     <div>
       Favorites:<br>
-      <%= f.check_box :chocolate %> Chocolate<br>
-      <%= f.check_box :rainbows %> Rainbows<br>
-      <%= f.check_box :puppies %> Puppies<br>
+      <%= check_box_tag :chocolate %> Chocolate<br>
+      <%= check_box_tag :rainbows %> Rainbows<br>
+      <%= check_box_tag :puppies %> Puppies<br>
       <% if Rails.env == "development" %>
-        <%= f.check_box :cold_hard_cash %> Cold Hard Cash<br>
+        <%= check_box_tag :cold_hard_cash %> Cold Hard Cash<br>
       <% end %>
     </div>
-    <%= f.submit %>
+  <%= submit_tag %>
   <% end %>
+<% end %>
