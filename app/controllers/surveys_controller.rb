@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
@@ -8,7 +8,7 @@ class HomeController < ApplicationController
   def create
     @survey = Survey.create!(name: params[:name], chocolate: params[:chocolate],
         rainbows: params[:rainbows], puppies: params[:puppies], cold_hard_cash: params[:cold_hard_cash])
-    redirect_to :show
+    render :show
   end
 
   def show
