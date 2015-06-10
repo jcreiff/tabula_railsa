@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'home#new'
+  root 'surveys#new'
   # get 'home/new'
   # post 'home/create'
   # get 'home/show'

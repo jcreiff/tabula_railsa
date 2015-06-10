@@ -4,18 +4,18 @@ class SurveysController < ApplicationController
     @survey = Survey.new
   end
 
-
   def create
-    @survey = Survey.create!(name: params[:name], chocolate: params[:chocolate],
-        rainbows: params[:rainbows], puppies: params[:puppies], cold_hard_cash: params[:cold_hard_cash])
-    render :show
+    @survey = Survey.new(survey_params)
+    if @survey.save
+      redirect_to survey_path(@survey)
+    end
   end
 
   def show
-
+    @survey = Survey.find_by_id(params[:id])
   end
 
   private def survey_params
-    params.require(:home).permit(:name, :chocolate, :rainbows, :puppies, :cold_hard_cash)
+    params.require(:survey).permit(:name, :chocolate, :rainbows, :puppies, :cold_hard_cash)
   end
 end
