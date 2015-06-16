@@ -1,15 +1,1 @@
-<%= form_for @survey do |f| %>
-  <div>
-    Name: <%= f.text_field :name %>
-  </div>
-  <div>
-    Favorites:<br>
-    <%= f.check_box :chocolate %> Chocolate<br>
-    <%= f.check_box :rainbows %> Rainbows<br>
-    <%= f.check_box :puppies %> Puppies<br>
-    <% if Rails.env == "development" %>
-      <%= f.check_box :cold_hard_cash %> Cold Hard Cash<br>
-    <% end %>
-  </div>
-<%= f.submit %>
-<% end %>
+<%= render 'form' %>

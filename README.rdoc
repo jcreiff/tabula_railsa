@@ -14,3 +14,17 @@ therefore less easily compromised.
 
 Rails runs migrations for your test database automatically when you rake, so fixtures
 appear in test environment (whether you like it or not).
+
+
+__________________________________
+
+Partials v. Helpers:
+
+I understand that partials are useful so that pieces of code that are likely to be
+used in more than one view (or that are only used once, but clutter the view because
+they are bulky) can be stored in a separate place and called by "render 'partial_name'".
+
+In this case, the form for @survey seems like a good candidate to be put in a partial.
+
+I'm unclear as to exactly what helpers do, but I have a hunch that they would be
+useful to simplify the show page (?)
