@@ -6,12 +6,15 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(survey_params)
-    if survey_params[:name] == session[:name]
-      render :new, notice: "Cannot take survey twice."
+    if session[:disable_save] != true
+      if @survey.save
+        session[:disable_save] = true
+        redirect_to survey_path(@survey)
+      else
+        render :new
+      end
     else
-      @survey.save
-      session[:name] = survey_params[:name]
-      redirect_to survey_path(@survey)
+      redirect_to root_path, notice: "Can't take survey twice!"
     end
   end
 
