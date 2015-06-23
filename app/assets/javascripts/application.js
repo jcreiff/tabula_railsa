@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-function disabledButton(){
+function disableButton() {
   var button = document.getElementById("submit-button");
-  setTimeout(function(){ button.disabled = true; }, 1);
-};
+  setTimeout(function(){button.disabled = true;}, 1);
+}
