@@ -19,3 +19,16 @@ function disableButton() {
   var button = document.getElementById("submit-button");
   setTimeout(function(){button.disabled = true;}, 1);
 }
+
+function hideBoxes() {
+  $('.checkbox').hide();
+};
+
+function showBoxes() {
+  $('#survey_name').keypress(function() {
+    $('.checkbox').show();
+  });
+};
+
+$(hideBoxes)
+$(showBoxes)
