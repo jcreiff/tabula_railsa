@@ -25,10 +25,16 @@ function hideBoxes() {
 };
 
 function showBoxes() {
-  $('#survey_name').keypress(function() {
-    $('.checkbox').show();
-  });
+  $('.checkbox').show();
 };
 
-$(hideBoxes)
-$(showBoxes)
+function switchView() {
+  if($('#survey_name').val().length > 0) {
+    showBoxes();
+  } else {
+    hideBoxes();
+  }
+}
+
+$(hideBoxes);
+$(function(){$('#survey_name').on("input", switchView);});
